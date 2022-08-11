@@ -1,9 +1,9 @@
-from gc import callbacks
+# from gc import callbacks
 from aiogram import types
-from data.config import CHANNELS
+# from data.config import CHANNELS
 from loader import dp
-from keyboards.inline import YesOrNot
-from keyboards.default import main_menu
+# from keyboards.inline import YesOrNot
+# from keyboards.default import main_menu
 from aiogram.dispatcher.filters.builtin import Text
 # from states.posting_on_channel import Post,Weater
 from aiogram.dispatcher import FSMContext
@@ -57,7 +57,7 @@ async def bot_start(message: types.Message, state: FSMContext):
                     f"Погода в городе: {city}\nТемпература: {cur_weather}C° \n{wd}\n"
                     f"Влажность: {humidity}%\nДавление: {pressure} мм.рт.ст\nВетер: {wind} м/с\n"
                     f"Восход солнца: {sunrise_timestamp}\nЗакат солнца: {sunset_timestamp}\nПродолжительность дня: {length_of_the_day}\n"
-                    f"***Хорошего дня!***",reply_markup=YesOrNot.Post
+                    f"***Хорошего дня!***"
                     )
                 
             except:
@@ -69,24 +69,25 @@ async def bot_start(message: types.Message, state: FSMContext):
 
 
 
-@dp.callback_query_handler(text="post")
-async def bot_content(call: types.CallbackQuery,state: FSMContext):
+# @dp.callback_query_handler(text="post")
+# async def bot_content(call: types.CallbackQuery,state: FSMContext):
 
-        await state.update_data({"content" : str(call.message.text)})
-        await call.message.answer("Do you want to post this?\n", reply_markup=YesOrNot.YorN)
+#         await state.update_data({"content" : str(call.message.text)})
+#         await call.message.answer("Do you want to post this?\n", reply_markup=YesOrNot.YorN)
         
 
-@dp.callback_query_handler(text="Yes")
-async def online_courses(call: types.CallbackQuery, state: FSMContext):
-    data = await state.get_data()
-    content= data.get('content')
-    await dp.bot.send_message(CHANNELS[0], content)
-    await call.message.delete()
-    await call.message.answer("Posted", reply_markup=main_menu.Menu)
+# @dp.callback_query_handler(text="Yes")
+# async def online_courses(call: types.CallbackQuery, state: FSMContext):
+#     data = await state.get_data()
+#     content= data.get('content')
+#     await dp.bot.send_message(CHANNELS[0], content)
+#     await call.message.delete()
+#     await call.message.answer("Posted", reply_markup=main_menu.Menu)
     
 
-@dp.callback_query_handler(text="No")
-async def online_courses(call: types.CallbackQuery, state: FSMContext):
+# @dp.callback_query_handler(text="No")
+# async def online_courses(call: types.CallbackQuery, state: FSMContext):
 
-    await call.message.delete()
-    await call.message.answer("Menu", reply_markup=main_menu.Menu)
+#     await call.message.delete()
+#     await call.message.answer("Menu", reply_markup=main_menu.Menu)
+
