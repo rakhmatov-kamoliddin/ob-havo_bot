@@ -1,8 +1,5 @@
-# from turtle import title
-# from aiogram import types
-# from aiogram.dispatcher.filters.builtin import CommandStart
+
 from keyboards.default import main_menu
-# from loader import dp
 
 
 # @dp.message_handler(CommandStart())

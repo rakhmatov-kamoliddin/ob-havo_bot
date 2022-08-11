@@ -1,15 +1,11 @@
-import asyncio
+
 from aiogram.dispatcher import FSMContext
-from keyboards.inline import YesOrNot
 from keyboards.default import main_menu
 from aiogram import types
 from aiogram.dispatcher.filters import Text
 from filters.private_filter import IsPrivate
-from states.posting_on_channel import Reklama
-from data.config import CHANNELS
 from data.config import ADMINS
 from loader import dp, db, bot
-from aiogram.types import InlineQuery, InputTextMessageContent, InlineQueryResultArticle,InlineQueryResultPhoto,InputMediaPhoto,InlineQueryResultGif,InputMediaAnimation,InlineQueryResultAudio,InputMediaAudio,InlineQueryResultVideo,InputMediaVideo
 
 @dp.message_handler(text="/allusers", user_id=ADMINS)
 async def get_all_users(message: types.Message):
