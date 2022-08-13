@@ -10,7 +10,6 @@ from loader import dp, db, bot
 @dp.message_handler(text="/allusers", user_id=ADMINS)
 async def get_all_users(message: types.Message):
     users = db.select_all_users()
-    # print(users[0][0])
     
     allusers=''
     for i,user in enumerate(users):
