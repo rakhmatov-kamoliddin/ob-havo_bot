@@ -43,11 +43,11 @@ async def sending_advert(message: types.Message, state: FSMContext):
     await state.finish()
     
     
-@dp.message_handler(Text('About'))
+@dp.message_handler(Text('Информация о боте'))
 async def bot_start(message: types.Message):
-    await message.answer_photo('https://img.myloview.com/stickers/glowing-neon-line-sun-and-cloud-weather-icon-isolated-on-black-background-vector-700-240571863.jpg',caption="🌎 Dunyoning barcha shaharlarning ob-havosini topib berish uchun mo'ljalangan telegram bot!\n",reply_markup=main_menu.Menu)
+    await message.answer_photo('https://img.myloview.com/stickers/glowing-neon-line-sun-and-cloud-weather-icon-isolated-on-black-background-vector-700-240571863.jpg',caption="🌎 Этот бот предназначен для поиска погоды во всех городах мира!\n",reply_markup=main_menu.Menu)
 
 
 @dp.message_handler(text=('/about'))
 async def bot_start(message: types.Message):
-    await message.answer_photo('https://img.myloview.com/stickers/glowing-neon-line-sun-and-cloud-weather-icon-isolated-on-black-background-vector-700-240571863.jpg',caption="🌎 Dunyoning barcha shaharlarning ob-havosini topib berish uchun mo'ljalangan telegram bot!\n",reply_markup=main_menu.Menu)
+    await message.answer_photo('https://img.myloview.com/stickers/glowing-neon-line-sun-and-cloud-weather-icon-isolated-on-black-background-vector-700-240571863.jpg',caption="🌎 Этот бот предназначен для поиска погоды во всех городах мира!\n",reply_markup=main_menu.Menu)

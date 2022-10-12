@@ -13,7 +13,7 @@ from aiogram import *
 
 open_weather_token = "9a3bd9f125cbd2e9b79eeee6c71cee41"
 
-@dp.message_handler(Text('🌤 Weather 🌤'))
+@dp.message_handler(Text('🌤 Погода 🌤'))
 async def bot_start(message: types.Message, state: FSMContext):
     await message.reply("Привет! Напиши мне название города и я отправлю тебе прогноз погоды!")
     @dp.message_handler()
